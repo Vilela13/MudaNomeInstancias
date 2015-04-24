@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1429887633 source:/home/mateus/Dropbox/Mestrado Pessoal/tema/Instancias/MudarNomeArquivos/main.cpp
+	<sstream>
+	<iostream>
+	<istream>
+	<list>
+	<string>
+	<fstream>
+	<vector>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<cstring>
+
