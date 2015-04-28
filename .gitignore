@@ -1,0 +1,13 @@
+# um comentario - isto é ignorado
+# ignora o tipo arquivo de layout do code::blocks
+*.layout
+# ignora o tipo arquivo de layout do code::blocks
+*.depend
+# ignora o arquivo ArquMudNome
+ArquMudNome
+# Todo arquivo terminado com ~ que marca arquivoi temporario
+*~
+# ignora arquivos terminados com .o (arquivo objeto) ou .a (compactado) 
+*.[oa]
+# ignora arquivos .txt
+*.txt

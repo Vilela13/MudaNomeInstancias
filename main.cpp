@@ -16,42 +16,52 @@
 using namespace std;
 
 void EscreveNomeArquivos(){
-    ofstream AqruivoSaida;
-    AqruivoSaida.open("NomeInstancias.txt");
+    ofstream AqruivoSaida1;
+    ofstream AqruivoSaida2;
+    AqruivoSaida1.open("NomeInstancias.txt");
+    AqruivoSaida2.open("NomeMudadoInstancias.txt");
 
 // C101
     for(int i = 101; i < 110; i++){
-        AqruivoSaida << "C" << i << ".txt"<< endl;
+        AqruivoSaida1 << "C" << i << ".txt"<< endl;
+        AqruivoSaida2 << "p-C" << i << ".txt"<< endl;
     }
 
 // C201
     for(int i = 201; i < 209; i++){
-        AqruivoSaida << "C" << i << ".txt"<< endl;
+        AqruivoSaida1 << "C" << i << ".txt"<< endl;
+        AqruivoSaida2 << "p-C" << i << ".txt"<< endl;
     }
 
 // R101
     for(int i = 101; i < 113; i++){
-        AqruivoSaida << "R" << i << ".txt"<< endl;
+        AqruivoSaida1 << "R" << i << ".txt"<< endl;
+        AqruivoSaida2 << "p-R" << i << ".txt"<< endl;
     }
 
 // R201
     for(int i = 201; i < 212; i++){
-        AqruivoSaida << "R" << i << ".txt"<< endl;
+        AqruivoSaida1 << "R" << i << ".txt"<< endl;
+        AqruivoSaida2 << "p-R" << i << ".txt"<< endl;
     }
 
 // RC101
     for(int i = 101; i < 109; i++){
-        AqruivoSaida << "RC" << i << ".txt"<< endl;
+        AqruivoSaida1 << "RC" << i << ".txt"<< endl;
+        AqruivoSaida2 << "p-RC" << i << ".txt"<< endl;
     }
 
 // RC201
     for(int i = 201; i < 209; i++){
-        AqruivoSaida << "RC" << i << ".txt"<< endl;
+        AqruivoSaida1 << "RC" << i << ".txt"<< endl;
+        AqruivoSaida2 << "p-RC" << i << ".txt"<< endl;
     }
 
-    AqruivoSaida << "EOF";
+    AqruivoSaida1 << "EOF";
+    AqruivoSaida2 << "EOF";
 
-    AqruivoSaida.close();
+    AqruivoSaida1.close();
+    AqruivoSaida2.close();
 
 
 
@@ -74,7 +84,7 @@ int main(){
 
 	list<char*>::iterator it;
 
-	//EscreveNomeArquivos();
+	EscreveNomeArquivos();
 
 	ArquivoNomeInstancias.open("NomeInstancias.txt");
 	ArquivoNomeInstancias >> Nome1;
@@ -82,7 +92,7 @@ int main(){
 		a = new char[Nome1.size()+1];
 		a[Nome1.size()]=0;
 		memcpy(a,Nome1.c_str(),Nome1.size());
-		cout << a  << endl ;
+		//cout << a  << endl ;
 		ListaInstancias.push_back(a);
 		ArquivoNomeInstancias >> Nome1;
 	}
@@ -94,19 +104,19 @@ int main(){
 		a = *it;
 		ListaInstancias.pop_front();
 
-        Nome1 = "/home/mateus/ArqMudNome/p-";               // Aqui se coloca onde se quer colocar os arquivos, tomar cuidado com caminhos muito longos
+        Nome1 = "./ArqMudNome/p-";               // Aqui se coloca onde se quer colocar os arquivos, tomar cuidado com caminhos muito longos
         b = new char[Nome1.size()+1];
         b[Nome1.size()]=0;
         memcpy(b,Nome1.c_str(),Nome1.size());
         strcat(b,a);
 
-        Nome2 = "/home/mateus/Área\ de\ Trabalho/MudarNome/";
+        Nome2 = "./InstPeq/";
         c = new char[Nome2.size()+1];
         c[Nome2.size()]=0;
         memcpy(c,Nome2.c_str(),Nome2.size());
         strcat(c,a);
 
-        //cout << endl << c << endl << b << endl << ListaInstancias.size() << endl ;
+        cout << endl << c << endl << b << endl << ListaInstancias.size() << endl ;
 
 
 
@@ -135,7 +145,9 @@ int main(){
         ArquivoEntrada.close();
         AqruivoSaida.close();
 
- }
+
+
+    }
 
 
 
